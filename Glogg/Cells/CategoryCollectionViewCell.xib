@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="Glogg" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="186"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="165" height="186"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group 3" translatesAutoresizingMaskIntoConstraints="NO" id="Guk-xt-Nt6">
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="139.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brownie with almonds and melted chocolate" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNA-Wo-gN0">
+                        <rect key="frame" x="3" y="144.5" width="159" height="41.5"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                        <color key="textColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Guk-xt-Nt6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7E4-wl-0jG"/>
+                <constraint firstItem="yNA-Wo-gN0" firstAttribute="top" secondItem="Guk-xt-Nt6" secondAttribute="bottom" constant="5" id="Bdx-eM-bgt"/>
+                <constraint firstAttribute="trailing" secondItem="Guk-xt-Nt6" secondAttribute="trailing" id="Ct1-PZ-grh"/>
+                <constraint firstItem="yNA-Wo-gN0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="KxE-D2-xk0"/>
+                <constraint firstAttribute="bottom" secondItem="yNA-Wo-gN0" secondAttribute="bottom" id="YJ8-ko-wxA"/>
+                <constraint firstItem="Guk-xt-Nt6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bgz-d0-vhN"/>
+                <constraint firstAttribute="trailing" secondItem="yNA-Wo-gN0" secondAttribute="trailing" constant="3" id="fFK-Ue-R7S"/>
+                <constraint firstItem="Guk-xt-Nt6" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.75" id="rF5-wk-5ta"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="165" height="186"/>
+            <connections>
+                <outlet property="imgCategory" destination="Guk-xt-Nt6" id="Ikp-yl-Y8d"/>
+                <outlet property="lblCategory" destination="yNA-Wo-gN0" id="MQk-MM-4Qh"/>
+            </connections>
+            <point key="canvasLocation" x="119.56521739130436" y="92.410714285714278"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Mask Group 3" width="166" height="166"/>
+    </resources>
+</document>
