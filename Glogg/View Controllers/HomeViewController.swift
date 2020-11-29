@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: (categoryCollectionView.frame.width / 2) - 40, height: categoryCollectionView.frame.height - 40)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        categoryCollectionView.collectionViewLayout = layout
+        categoryCollectionView.collectionViewLayout = layout 
     }
     
     @IBAction func btnArrowTapped(_ sender: UIButton) {
