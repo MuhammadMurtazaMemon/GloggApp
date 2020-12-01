@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710B39292576D611003958F1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B39282576D611003958F1 /* RecipeDetailViewController.swift */; };
 		711A52D4256EF01C006E34D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711A52D3256EF01C006E34D5 /* DetailViewController.swift */; };
 		711AC5462559D17300113EF8 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711AC5442559D17300113EF8 /* ProfileCollectionViewCell.swift */; };
 		711AC5472559D17300113EF8 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711AC5452559D17300113EF8 /* ProfileCollectionViewCell.xib */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710B39282576D611003958F1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		711A52D3256EF01C006E34D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		711AC5442559D17300113EF8 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		711AC5452559D17300113EF8 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				718D833D25338CC4008D44C9 /* FeedViewController.swift */,
 				718D834125339962008D44C9 /* ProfileViewController.swift */,
 				711A52D3256EF01C006E34D5 /* DetailViewController.swift */,
+				710B39282576D611003958F1 /* RecipeDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				712A585B25582DB90039FE8C /* SearchTableViewCell.swift in Sources */,
 				718D834225339962008D44C9 /* ProfileViewController.swift in Sources */,
 				7173BEBA25685DED00AB5545 /* IngredientsTableViewCell.swift in Sources */,
+				710B39292576D611003958F1 /* RecipeDetailViewController.swift in Sources */,
 				718D833E25338CC4008D44C9 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
