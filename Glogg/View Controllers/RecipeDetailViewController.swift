@@ -21,6 +21,7 @@ class RecipeDetailViewController: UIViewController {
     
     var ingredients = ["Beef", "Milk", "Sweet Potatoes", "Curd", "Salt", "All Spices"]
     var quantity = ["1 Kilo", "330 ml", "500 g", "2 st", "3 g", "15 ml"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -29,16 +30,16 @@ class RecipeDetailViewController: UIViewController {
     func setupViews(){
         let cellNib = UINib(nibName: "IngredientsDetailTableViewCell", bundle: nil)
         ingredientsDetailTableView.register(cellNib, forCellReuseIdentifier: "IngredientsDetailTableViewCell")
-        
-        
+        ingredientsDetailTableView.rowHeight = 50
     }
 }
-extension RecipeDetailViewController :UITableViewDelegate, UITableViewDataSource{
+extension RecipeDetailViewController : UITableViewDataSource, UITableViewDelegate {
      
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailTableViewCell", for: indexPath) as! IngredientsDetailTableViewCell
             cell.lblIngredient.text = ingredients[indexPath.row]
             cell.lblQuantity.text = quantity[indexPath.row]

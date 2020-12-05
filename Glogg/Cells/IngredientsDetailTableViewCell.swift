@@ -12,6 +12,7 @@ class IngredientsDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblIngredient: UILabel!
     @IBOutlet weak var lblQuantity: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
