@@ -22,6 +22,18 @@ class RecipeDetailViewController: UIViewController {
     var ingredients = ["Beef", "Milk", "Sweet Potatoes", "Curd", "Salt", "All Spices"]
     var quantity = ["1 Kilo", "330 ml", "500 g", "2 st", "3 g", "15 ml"]
     
+    @IBOutlet weak var caloriesView: UIView!
+    @IBOutlet weak var protienView: UIView!
+    @IBOutlet weak var fatsView: UIView!
+    @IBOutlet weak var carbsView: UIView!
+    
+    @IBOutlet weak var caloriesCount: UILabel!
+    @IBOutlet weak var protiensCount: UILabel!
+    @IBOutlet weak var fatsCount: UILabel!
+    @IBOutlet weak var carbsCount: UILabel!
+    
+    @IBOutlet weak var recipeTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -31,7 +43,30 @@ class RecipeDetailViewController: UIViewController {
         let cellNib = UINib(nibName: "IngredientsDetailTableViewCell", bundle: nil)
         ingredientsDetailTableView.register(cellNib, forCellReuseIdentifier: "IngredientsDetailTableViewCell")
         ingredientsDetailTableView.rowHeight = 50
+    
+        ingredientsTabView.isUserInteractionEnabled = true
+        ingredientsTabView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ingredientsTapped)))
+        recipeTabView.isUserInteractionEnabled = true
+        recipeTabView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(recipeTapped)))        
     }
+    
+    @objc func ingredientsTapped(){
+        lblRecipe.textColor = UIColor.gray
+        recipeSeperator.isHidden = true
+        recipeTextView.isHidden = true
+        lblIngredients.textColor = UIColor.black
+        ingredientsSeperator.isHidden = false
+        
+    }
+    
+    @objc func recipeTapped(){
+        lblIngredients.textColor = UIColor.gray
+        ingredientsSeperator.isHidden = true
+        lblRecipe.textColor = UIColor.black
+        recipeSeperator.isHidden = false
+        recipeTextView.isHidden = false
+    }
+    
 }
 extension RecipeDetailViewController : UITableViewDataSource, UITableViewDelegate {
      

@@ -28,6 +28,8 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func btnPlayTapped(_ sender: Any) {
+        let vc = RecipeDetailViewController()
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func btnFollowTapped(_ sender: Any) {
