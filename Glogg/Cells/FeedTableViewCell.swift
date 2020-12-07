@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FeedTableViewCellDelegate: class {
+    func favouriteImageTapped(indexPath: IndexPath)
+}
+
 class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgProfilePic: UIImageView!
@@ -15,6 +19,9 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var btnFavourite: UIButton!
     @IBOutlet weak var imgRecipe: UIImageView!
     @IBOutlet weak var lblRecipeName: UILabel!
+    
+    var indexPath = IndexPath()
+    var delegate: FeedTableViewCellDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +35,6 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnFavouriteTapped(_ sender: Any) {
+        self.delegate.favouriteImageTapped(indexPath: indexPath)
     }
 }

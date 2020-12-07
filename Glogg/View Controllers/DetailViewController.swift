@@ -15,6 +15,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var btnFavourite: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var btnFollow: UIButton!
+    
+    var isFav = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,13 +25,16 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnFavouriteTapped(_ sender: Any) {
+        isFav = !isFav
+        btnFavourite.setImage(UIImage(named: isFav ? "heart-icon-fill" : "Favourite"), for: .normal)
     }
     
     @IBAction func btnPlayTapped(_ sender: Any) {
-        let vc = RecipeDetailViewController()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecipeDetailViewController") as! RecipeDetailViewController
         present(vc, animated: true, completion: nil)
     }
     

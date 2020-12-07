@@ -14,6 +14,9 @@ class AddRecipeViewController: UIViewController {
     var cellNib2: UINib!
     var layout: UICollectionViewFlowLayout!
     
+    var recipeImages = [UIImage]()
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -34,7 +37,27 @@ class AddRecipeViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: 166, height: 166)
         
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        imagePicker.mediaTypes = ["public.image"]
+    }
+    
+    func showImagePickerAlert(){
         
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        let galleryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cameraAction)
+        alert.addAction(galleryAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -55,6 +78,7 @@ extension AddRecipeViewController: UITableViewDataSource, UITableViewDelegate{
             cell.photoCollectionView.collectionViewLayout = layout
             cell.photoCollectionView.dataSource = self
             cell.photoCollectionView.delegate = self
+            cell.photoCollectionView.reloadData()
             return cell
         }
         else if (indexPath.row == 4){
@@ -96,17 +120,44 @@ extension AddRecipeViewController: UITableViewDataSource, UITableViewDelegate{
 extension AddRecipeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return recipeImages.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosAndVideosCollectionViewCell", for: indexPath) as! PhotosAndVideosCollectionViewCell
-        cell.btnDelete.isHidden = true
-        cell.btnAdd.isHidden = false
+        cell.btnDelete.isHidden = indexPath.row == 0
+        cell.btnAdd.isHidden = indexPath.row > 0
         cell.imgMedias.roundCorners(radius: Float(20))
         cell.imgMedias.layer.borderWidth = 1
         cell.imgMedias.layer.borderColor = UIColor.orange.cgColor
+        if (indexPath.row == 0){
+            cell.imgMedias.image = nil
+        }
+        else{
+            cell.imgMedias.image = recipeImages[indexPath.row - 1]
+        }
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+            showImagePickerAlert()
+        }
+    }
+    
+}
+
+extension AddRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[.editedImage] as! UIImage
+        self.recipeImages.append(image)
+        self.publishRecipeTableView.reloadData()
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
