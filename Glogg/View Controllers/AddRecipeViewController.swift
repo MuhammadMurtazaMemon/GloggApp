@@ -161,3 +161,10 @@ extension AddRecipeViewController: UIImagePickerControllerDelegate, UINavigation
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+extension AddRecipeViewController: PhotosAndVideosCollectionViewCellDelegate{
+    func deleteImageTapped(indexPath: IndexPath) {
+        self.recipeImages.remove(at: indexPath.row)
+    
+    }
+}

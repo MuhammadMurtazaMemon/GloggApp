@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol PhotosAndVideosCollectionViewCellDelegate: class {
+    func deleteImageTapped(indexPath: IndexPath)
+}
+
 class PhotosAndVideosCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imgMedias: UIImageView!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var btnDelete: UIButton!
+    
+    var indexPath = IndexPath()
+    var delegate: PhotosAndVideosCollectionViewCellDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +30,7 @@ class PhotosAndVideosCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func btnDeleteTapped(_ sender: Any) {
+        self.delegate.deleteImageTapped(indexPath: indexPath)
     }
     
 }
