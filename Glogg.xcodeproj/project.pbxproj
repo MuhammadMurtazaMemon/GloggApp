@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C26AE06CA2301EC88B22A2 /* Pods_Glogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6724DD45D26AE2B48DA8E0 /* Pods_Glogg.framework */; };
 		3CE73EF7257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73EF5257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift */; };
 		3CE73EF8257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CE73EF6257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib */; };
 		710B39292576D611003958F1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B39282576D611003958F1 /* RecipeDetailViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		3CE73EF5257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CE73EF6257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsDetailTableViewCell.xib; sourceTree = "<group>"; };
+		6D0E87D3E311494A7DF7F7D0 /* Pods-Glogg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glogg.debug.xcconfig"; path = "Target Support Files/Pods-Glogg/Pods-Glogg.debug.xcconfig"; sourceTree = "<group>"; };
 		710B39282576D611003958F1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		711A52D3256EF01C006E34D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		711AC5442559D17300113EF8 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -86,6 +88,8 @@
 		71F9E6A025556A5C00FEAC6C /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		71F9E6A125556A5C00FEAC6C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		71F9E6A725556E0500FEAC6C /* ExtensionOfTheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionOfTheView.swift; sourceTree = "<group>"; };
+		8EF0F61326515DF3446ED585 /* Pods-Glogg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glogg.release.xcconfig"; path = "Target Support Files/Pods-Glogg/Pods-Glogg.release.xcconfig"; sourceTree = "<group>"; };
+		EB6724DD45D26AE2B48DA8E0 /* Pods_Glogg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glogg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C26AE06CA2301EC88B22A2 /* Pods_Glogg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,8 @@
 			children = (
 				718D831F25338654008D44C9 /* Glogg */,
 				718D831E25338654008D44C9 /* Products */,
+				B7915F81EA87D838084491D4 /* Pods */,
+				7C7CEC47590FF75B578BD1D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +199,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7C7CEC47590FF75B578BD1D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB6724DD45D26AE2B48DA8E0 /* Pods_Glogg.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7915F81EA87D838084491D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D0E87D3E311494A7DF7F7D0 /* Pods-Glogg.debug.xcconfig */,
+				8EF0F61326515DF3446ED585 /* Pods-Glogg.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 718D833125338656008D44C9 /* Build configuration list for PBXNativeTarget "Glogg" */;
 			buildPhases = (
+				A4C498468C620393ACB5FEF0 /* [CP] Check Pods Manifest.lock */,
 				718D831925338654008D44C9 /* Sources */,
 				718D831A25338654008D44C9 /* Frameworks */,
 				718D831B25338654008D44C9 /* Resources */,
+				814C7FA1AF8DA964AE9AFF0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +297,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		814C7FA1AF8DA964AE9AFF0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Glogg/Pods-Glogg-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Glogg/Pods-Glogg-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Glogg/Pods-Glogg-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4C498468C620393ACB5FEF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Glogg-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		718D831925338654008D44C9 /* Sources */ = {
@@ -438,6 +507,7 @@
 		};
 		718D833225338656008D44C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D0E87D3E311494A7DF7F7D0 /* Pods-Glogg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +526,7 @@
 		};
 		718D833325338656008D44C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EF0F61326515DF3446ED585 /* Pods-Glogg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

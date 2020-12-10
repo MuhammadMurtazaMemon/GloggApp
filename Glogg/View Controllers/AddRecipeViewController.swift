@@ -125,6 +125,8 @@ extension AddRecipeViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosAndVideosCollectionViewCell", for: indexPath) as! PhotosAndVideosCollectionViewCell
+        cell.indexPath = indexPath
+        cell.delegate = self
         cell.btnDelete.isHidden = indexPath.row == 0
         cell.btnAdd.isHidden = indexPath.row > 0
         cell.imgMedias.roundCorners(radius: Float(20))
@@ -164,7 +166,15 @@ extension AddRecipeViewController: UIImagePickerControllerDelegate, UINavigation
 
 extension AddRecipeViewController: PhotosAndVideosCollectionViewCellDelegate{
     func deleteImageTapped(indexPath: IndexPath) {
-        self.recipeImages.remove(at: indexPath.row)
+        let alert = UIAlertController(title: nil, message: "Sure to remove?", preferredStyle: .actionSheet)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.recipeImages.remove(at: indexPath.row)
+            self.publishRecipeTableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(yesAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     
     }
 }
