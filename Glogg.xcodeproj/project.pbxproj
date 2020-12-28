@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		711A52D4256EF01C006E34D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711A52D3256EF01C006E34D5 /* DetailViewController.swift */; };
 		711AC5462559D17300113EF8 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711AC5442559D17300113EF8 /* ProfileCollectionViewCell.swift */; };
 		711AC5472559D17300113EF8 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711AC5452559D17300113EF8 /* ProfileCollectionViewCell.xib */; };
+		7128F75F259A7688009698CA /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128F75E259A7688009698CA /* FilmModel.swift */; };
 		712A585B25582DB90039FE8C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712A585925582DB90039FE8C /* SearchTableViewCell.swift */; };
 		712A585C25582DB90039FE8C /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712A585A25582DB90039FE8C /* SearchTableViewCell.xib */; };
 		7131815D2556DE8A0017C39F /* SearchCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7131815B2556DE8A0017C39F /* SearchCategoryCollectionViewCell.swift */; };
@@ -55,6 +56,7 @@
 		711A52D3256EF01C006E34D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		711AC5442559D17300113EF8 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		711AC5452559D17300113EF8 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		7128F75E259A7688009698CA /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 		712A585925582DB90039FE8C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		712A585A25582DB90039FE8C /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		7131815B2556DE8A0017C39F /* SearchCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7128F75D259A7676009698CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7128F75E259A7688009698CA /* FilmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		718D831425338654008D44C9 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		718D831F25338654008D44C9 /* Glogg */ = {
 			isa = PBXGroup;
 			children = (
+				7128F75D259A7676009698CA /* Models */,
 				71CB666D2555A4510027A193 /* Cells */,
 				71F9E6A625556DEE00FEAC6C /* Extensions */,
 				71F9E69E2555692A00FEAC6C /* Fonts */,
@@ -213,7 +224,6 @@
 				6D0E87D3E311494A7DF7F7D0 /* Pods-Glogg.debug.xcconfig */,
 				8EF0F61326515DF3446ED585 /* Pods-Glogg.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -354,6 +364,7 @@
 				713ADF1725607C830003B84D /* PhotoAndVideoTableViewCell.swift in Sources */,
 				718D832325338654008D44C9 /* SceneDelegate.swift in Sources */,
 				7158BF7025587A8300DEE98D /* FeedTableViewCell.swift in Sources */,
+				7128F75F259A7688009698CA /* FilmModel.swift in Sources */,
 				71F9E6A825556E0500FEAC6C /* ExtensionOfTheView.swift in Sources */,
 				711A52D4256EF01C006E34D5 /* DetailViewController.swift in Sources */,
 				71CB66702555A4B10027A193 /* CategoryCollectionViewCell.swift in Sources */,
@@ -513,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKT3D8HQYZ;
 				INFOPLIST_FILE = Glogg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,6 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKT3D8HQYZ;
 				INFOPLIST_FILE = Glogg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import Loaf
 
 class HomeViewController: UIViewController {
 
@@ -30,14 +31,18 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        DispatchQueue.main.async {
-            SVProgressHUD.show(withStatus: "Loading...")
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            //SVProgressHUD.dismiss()
-            SVProgressHUD.showError(withStatus: "Loading end")
-        }
+//        DispatchQueue.main.async {
+//            SVProgressHUD.show(withStatus: "Loading...")
+//        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            //SVProgressHUD.dismiss()
+//            SVProgressHUD.showError(withStatus: "Loading end")
+//            
+//            Loaf("This is a testing error", state: .error, location: .top, presentingDirection: .vertical, dismissingDirection: .vertical, sender: self).show(.custom(5)) { (action) in
+//                
+//            }
+//        }
         
     }
     

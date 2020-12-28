@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var feedTableView: UITableView!
     
     var selectedRows = [Int]()
+    var filmArray = [FilmModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        getFilmData()
     }
     
     func setupViews(){
@@ -25,20 +30,48 @@ class FeedViewController: UIViewController {
         feedTableView.rowHeight = 480
     }
     
+    func getFilmData(){
+        
+        SVProgressHUD.show()
+        
+        let request = AF.request("https://swapi.dev/api/films", method: .get, parameters: nil, encoding: URLEncoding.queryString, headers: nil)
+        
+        request.responseJSON { (response) in
+            SVProgressHUD.dismiss()
+            print("Data Without SwiftyJSON....")
+            print(response)
+            print("\n")
+            print("Data With SwiftyJSON")
+            let myJSON = JSON(response.value)
+            print(myJSON)
+            let filmArray = myJSON["results"].arrayValue
+            for film in filmArray{
+                let model = FilmModel()
+                model.updateModelWithJSON(json: film)
+                model.filmImage = "https://homepages.cae.wisc.edu/~ece533/images/fruits.png"
+                self.filmArray.append(model)
+            }
+            self.feedTableView.reloadData()
+        }
+        
+    }
+    
 }
 
 extension FeedViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return filmArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
+        let film = filmArray[indexPath.row]
         cell.indexPath = indexPath
         cell.delegate = self
-        cell.lblProfileName.text = indexPath.row % 2 == 0 ? "Eva Karlsson" : "Emma Slussen"
-        cell.imgRecipe.image = UIImage(named: indexPath.row % 2 == 0 ? "Recipe1" : "Recipe2")
+        cell.lblProfileName.text = film.filmName
+        cell.lblRecipeName.text = film.filmProducer
+        cell.imgRecipe.sd_setImage(with: URL(string: film.filmImage), placeholderImage: UIImage(named: "Recipe1"))
         cell.imgProfilePic.roundCorners(radius: Float(cell.imgProfilePic.frame.height / 2))
         cell.imgRecipe.roundCorners(radius: 20)
         if (self.selectedRows.contains(indexPath.row)){

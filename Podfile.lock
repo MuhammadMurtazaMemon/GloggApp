@@ -1,26 +1,38 @@
 PODS:
+  - Alamofire (5.4.1)
   - IQKeyboardManagerSwift (6.5.6)
+  - Loaf (0.7.0)
   - SDWebImage (5.10.0):
     - SDWebImage/Core (= 5.10.0)
   - SDWebImage/Core (5.10.0)
   - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - IQKeyboardManagerSwift
+  - Loaf
   - SDWebImage
   - SVProgressHUD
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IQKeyboardManagerSwift
+    - Loaf
     - SDWebImage
     - SVProgressHUD
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: b6d7fa64b52880c3be9b2999e3fd5a173ffabaa1
+PODFILE CHECKSUM: 48096d537cd876952fa3155e1d131942c5da7cdb
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3
