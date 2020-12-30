@@ -9,6 +9,8 @@
 import UIKit
 import SVProgressHUD
 import Loaf
+import Alamofire
+import SwiftyJSON
 
 class HomeViewController: UIViewController {
 
@@ -21,11 +23,12 @@ class HomeViewController: UIViewController {
     var recipeImageArray = ["https://homepages.cae.wisc.edu/~ece533/images/fruits.png", "https://homepages.cae.wisc.edu/~ece533/images/airplane.png", "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png", "https://homepages.cae.wisc.edu/~ece533/images/boat.png", "https://homepages.cae.wisc.edu/~ece533/images/mountain.png", "https://homepages.cae.wisc.edu/~ece533/images/mountain.png"]
     
     var  recipeNameArray = ["Fruit","Airplane","Arctichare","Boat","Cae","Mountain"]
-    
+    var userArray = [UserModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
+        getUserData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +63,25 @@ class HomeViewController: UIViewController {
         categoryCollectionView.collectionViewLayout = layout 
     }
     
+    func getUserData(){
+        SVProgressHUD.show()
+       
+        let request = AF.request("https://reqres.in/api/users?p", method: .get, parameters: nil, encoding: URLEncoding.queryString, headers: nil)
+        
+        request.responseJSON { (response) in
+            SVProgressHUD.dismiss()
+            
+            let myJSON = JSON(response.value)
+            let userArray = myJSON["data"].arrayValue
+            for user in userArray{
+                let model = UserModel()
+                model.updateModelWithJSON(json: user)
+                self.userArray.append(model)
+            }
+            self.categoryCollectionView.reloadData()
+        }
+        
+    }
     @IBAction func btnArrowTapped(_ sender: UIButton) {
         
     }
@@ -68,7 +90,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipeImageArray.count
+        return userArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,8 +99,11 @@ extension HomeViewController : UICollectionViewDataSource, UICollectionViewDeleg
         cell.imgCategory.roundCorners(radius: 20)
         //cell.imgCategory.sd_setImage(with: URL(string: recipeImageArray[indexPath.row]), placeholderImage: UIImage(named: "https://homepages.cae.wisc.edu/~ece533/images/watch.png"))
         //cell.lblCategory.text = recipeNameArray[indexPath.row]
-        cell.imgCategory.image = UIImage(named: indexPath.row % 2 == 0 ? "Recipe6" : "Recipe7")
-        cell.lblCategory.text = indexPath.row % 2 == 0 ? "Sandwich with smoked ham" : "Brownie with almonds and melted chocolate"
+        let user = userArray[indexPath.row]
+        cell.imgCategory.sd_setImage(with: URL(string: user.userAvatar), placeholderImage: UIImage(named: "Recipe1")) 
+        cell.lblCategory.text = user.userName
+        //cell.imgCategory.image = UIImage(named: indexPath.row % 2 == 0 ? "Recipe6" : "Recipe7")
+        //cell.lblCategory.text = indexPath.row % 2 == 0 ? "Sandwich with smoked ham" : "Brownie with almonds and melted chocolate"
         return cell
     }
     

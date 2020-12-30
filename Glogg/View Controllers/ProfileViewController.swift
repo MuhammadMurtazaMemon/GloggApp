@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var btnCreateList: UIButton!
     @IBOutlet weak var favouritesCollectionView: UICollectionView!
     @IBOutlet weak var publicationCollectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -48,7 +48,9 @@ class ProfileViewController: UIViewController {
         layout2.minimumLineSpacing = 0
         publicationCollectionView.collectionViewLayout = layout2
     }
+
     
+
     @IBAction func btnCreateList(_ sender: UIButton) {
         
     }

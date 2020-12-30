@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15C26AE06CA2301EC88B22A2 /* Pods_Glogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6724DD45D26AE2B48DA8E0 /* Pods_Glogg.framework */; };
+		3CB4A4E2259CB6E500753E8E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4A4E1259CB6E500753E8E /* UserModel.swift */; };
 		3CE73EF7257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73EF5257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift */; };
 		3CE73EF8257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CE73EF6257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib */; };
 		710B39292576D611003958F1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B39282576D611003958F1 /* RecipeDetailViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CB4A4E1259CB6E500753E8E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3CE73EF5257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3CE73EF6257BF7DC009B0DD4 /* IngredientsDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsDetailTableViewCell.xib; sourceTree = "<group>"; };
 		6D0E87D3E311494A7DF7F7D0 /* Pods-Glogg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glogg.debug.xcconfig"; path = "Target Support Files/Pods-Glogg/Pods-Glogg.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				7128F75E259A7688009698CA /* FilmModel.swift */,
+				3CB4A4E1259CB6E500753E8E /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				718D832125338654008D44C9 /* AppDelegate.swift in Sources */,
 				713ADF1725607C830003B84D /* PhotoAndVideoTableViewCell.swift in Sources */,
 				718D832325338654008D44C9 /* SceneDelegate.swift in Sources */,
+				3CB4A4E2259CB6E500753E8E /* UserModel.swift in Sources */,
 				7158BF7025587A8300DEE98D /* FeedTableViewCell.swift in Sources */,
 				7128F75F259A7688009698CA /* FilmModel.swift in Sources */,
 				71F9E6A825556E0500FEAC6C /* ExtensionOfTheView.swift in Sources */,
